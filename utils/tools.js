@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 
 class Tools {
   static timeout(delay) {
@@ -45,7 +46,7 @@ class Tools {
     // 判断是否存在该路径文件夹
     if (fs.existsSync(path)) {
       files = fs.readdirSync(path)
-      files.forEach((file, index) => {
+      files.forEach(file => {
         let currentPath = path + '/' + file
         // 当前文件夹是否有子文件
         if (fs.statSync(currentPath).isDirectory()) {
@@ -54,6 +55,30 @@ class Tools {
           fs.unlinkSync(currentPath) // 删除文件夹
         }
       })
+    }
+  }
+
+  static deleteFile(url, name) {
+    var files = []
+
+    if (fs.existsSync(url)) {
+      //判断给定的路径是否存在
+      files = fs.readdirSync(url)
+
+      files.forEach(file => {
+        var curPath = path.join(url, file)
+        if (fs.statSync(curPath).isDirectory()) {
+          //同步读取文件夹文件，如果是文件夹，则函数回调
+          deleteFile(curPath, name)
+        } else {
+          if (file.indexOf(name) > -1) {
+            fs.unlinkSync(curPath)
+            console.log('删除文件：' + curPath)
+          }
+        }
+      })
+    } else {
+      console.log('给定的路径不存在！')
     }
   }
 }
