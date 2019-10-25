@@ -1,0 +1,43 @@
+.rock-report-container {
+  margin: 0 auto;
+  width: 1200px
+}
+
+.rock-report-container .report-title {
+  margin: 30px 0 10px;
+  text-align: center;
+}
+
+.rock-report-container .profile-msg {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 500;
+}
+
+.rock-report-container .profile-msg {
+  margin-bottom: 20px;
+}
+
+.rock-report-container .profile-msg p:nth-of-type(1) {
+  margin-right: 50px;
+}
+
+.rock-report-container .single-canvas-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  width: 100%;
+  height: auto;
+}
+
+.rock-report-container .single-canvas-content.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.rock-report-container .word-content {
+  width: 580px;
+  height: 340px;
+  background-color: royalblue;
+}

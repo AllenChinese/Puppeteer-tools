@@ -9,8 +9,13 @@ http
     if (request.url === '/') {
       response.writeHead(200, { 'Content-Type': 'text/html' })
     } else {
-      // 接口响应
-      response.writeHead(200, { 'Content-Type': 'application/json' })
+      if (request.url.split('.')[1] === 'js' || request.url.split('.')[1] === 'json') {
+        // 接口响应
+        response.writeHead(200, { 'Content-Type': 'application/json' })
+      } else if (request.url.split('.')[1] === 'css') {
+        // css 响应
+        response.writeHead(200, { 'Content-Type': 'text/css' })
+      }
     }
     fs.readFile(entryPath, 'utf-8', (err, file) => {
       if (err) {
