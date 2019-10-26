@@ -43,6 +43,7 @@ class Tools {
 
   static delDir(path) {
     let files = []
+    console.log(path)
     // 判断是否存在该路径文件夹
     if (fs.existsSync(path)) {
       files = fs.readdirSync(path)

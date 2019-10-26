@@ -1,46 +1,46 @@
 [
-  {
-    "name": "德国",
-    "value": 1
-  },
-  {
-    "name": "美国",
-    "value": 11
-  },
-  {
-    "name": "中国",
-    "value": 25
-  },
-  {
-    "name": "英国",
-    "value": 3
-  },
-  {
-    "name": "丹麦",
-    "value": 1
-  },
-  {
-    "name": "芬兰",
-    "value": 1
-  },
-  {
-    "name": "日本",
-    "value": 3
-  },
-  {
-    "name": "意大利",
-    "value": 1
-  },
-  {
-    "name": "加拿大",
-    "value": 1
-  },
-  {
-    "name": "爱尔兰",
-    "value": 2
-  },
-  {
-    "name": "中国台湾",
-    "value": 1
-  }
+	{
+		"name": "德国",
+		"value": 1
+	},
+	{
+		"name": "美国",
+		"value": 11
+	},
+	{
+		"name": "中国",
+		"value": 25
+	},
+	{
+		"name": "英国",
+		"value": 3
+	},
+	{
+		"name": "丹麦",
+		"value": 1
+	},
+	{
+		"name": "芬兰",
+		"value": 1
+	},
+	{
+		"name": "日本",
+		"value": 3
+	},
+	{
+		"name": "意大利",
+		"value": 1
+	},
+	{
+		"name": "加拿大",
+		"value": 1
+	},
+	{
+		"name": "爱尔兰",
+		"value": 2
+	},
+	{
+		"name": "中国台湾",
+		"value": 1
+	}
 ]
