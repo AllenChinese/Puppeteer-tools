@@ -54,6 +54,8 @@ console.log(result)
 console.log(nodejieba.extractWithWords(nodejieba.tagWordsToStr(result), 5))
 console.log(nodejieba.extract(sentence, 5))
 console.log(nodejieba.textRankExtractWithWords(nodejieba.tagWordsToStr(result), 5))
+// textRankExtract(sentence, topK=20, withWeight=False, allowPOS=('ns', 'n', 'vn', 'v'))
+// https://blog.csdn.net/HHTNAN/article/details/77650128
 console.log(nodejieba.textRankExtract(sentence, 5))
 var topN = 5
 result = nodejieba.extract(sentence, topN)
