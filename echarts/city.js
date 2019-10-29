@@ -1,15 +1,4 @@
-var cityMap = echarts.init(document.getElementById('cityMap'))
-
-// 地图数据
-var chinaDataURL = '../data-1517645039291-B1vgpymUz.json'
-
-/**********************************************************************************
- *
- * 还有很多小细节没有注意到 ;
- * 请大神们多多指点哈!!!!!! ;
- *
- **********************************************************************************/
-
+var myChart = echarts.init(document.getElementById('cityMap'))
 var colors = [
   [
     '#1DE9B6',
@@ -85,7 +74,6 @@ $(function() {
       barData[i].push(mapData[i][j].value)
     }
   }
-  // chinaDataURL
   $.ajax({
     url: '../data-1517645039291-B1vgpymUz.json',
     async: false,
@@ -361,7 +349,7 @@ $(function() {
           ]
         })
       }
-      cityMap.setOption(optionXyMap01)
+      myChart.setOption(optionXyMap01)
     }
   })
 })
