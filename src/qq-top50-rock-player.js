@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer-cn')
 const { delDir } = require('../utils/tools')
 const fs = require('fs')
+const path = require('path')
 
 ;(async () => {
   console.time('time')
@@ -31,18 +32,21 @@ const fs = require('fs')
   // console.log(rockPlayers)
 
   for (let i = 0; i < rockPlayers.length; i++) {
-    console.log(rockPlayers[i].href)
+    console.log(rockPlayers[i].title)
     await page.goto(rockPlayers[i].href)
 
     let playerDescTxt = await page.evaluate(() => {
       return document.querySelector('.data__cont .data__desc_txt').textContent
     })
-    console.log(playerDescTxt)
+    // console.log(playerDescTxt)
     // 文件流形式写入文件
     let writeStream
     try {
       writeStream = fs.createWriteStream(
-        `../data/qq-rock-music/top50-player-profile/${rockPlayers[i].title}-个人简介.txt`
+        path.join(
+          __dirname,
+          `../data/qq-rock-music/top50-player-profile/${rockPlayers[i].title}-个人简介.txt`
+        )
       )
       writeStream.write(playerDescTxt, 'UTF8')
       writeStream.end()
