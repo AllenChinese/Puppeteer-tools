@@ -11,7 +11,8 @@
   "dependencies": {
     "agent-base": "^4.3.0",
     "puppeteer": "^1.20.0",
-    "puppeteer-cn": "^0.1.8"
+    "puppeteer-cn": "^0.1.8",
+    "sentiment": "^5.0.2"
   },
   "devDependencies": {
     "nodejieba": "^2.3.2"
