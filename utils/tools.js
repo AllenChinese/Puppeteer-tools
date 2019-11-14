@@ -47,7 +47,7 @@ class Tools {
     // 判断是否存在该路径文件夹
     if (fs.existsSync(path)) {
       files = fs.readdirSync(path)
-      files.forEach(file => {
+      files.forEach((file) => {
         let currentPath = path + '/' + file
         // 当前文件夹是否有子文件
         if (fs.statSync(currentPath).isDirectory()) {
@@ -66,11 +66,11 @@ class Tools {
       //判断给定的路径是否存在
       files = fs.readdirSync(url)
 
-      files.forEach(file => {
+      files.forEach((file) => {
         var curPath = path.join(url, file)
         if (fs.statSync(curPath).isDirectory()) {
           //同步读取文件夹文件，如果是文件夹，则函数回调
-          deleteFile(curPath, name)
+          Tools.deleteFile(curPath, name)
         } else {
           if (file.indexOf(name) > -1) {
             fs.unlinkSync(curPath)

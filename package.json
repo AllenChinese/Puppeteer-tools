@@ -15,6 +15,7 @@
     "sentiment": "^5.0.2"
   },
   "devDependencies": {
-    "nodejieba": "^2.3.2"
+    "nodejieba": "^2.3.2",
+    "prettier": "^1.19.1"
   }
 }

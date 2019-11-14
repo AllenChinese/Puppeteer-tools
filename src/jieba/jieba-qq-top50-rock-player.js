@@ -38,10 +38,10 @@ function processingNationalDistribution(nationalArray) {
     return prev
   }, {})
   // 生成符合 Echarts 饼图的数组
-  Object.keys(_nationalCountObj).forEach(item => {
+  Object.keys(_nationalCountObj).forEach((item) => {
     nationalDistribution.push({
       name: item,
-      value: _nationalCountObj[item]
+      value: _nationalCountObj[item],
     })
   })
   return nationalDistribution
@@ -57,7 +57,7 @@ function writeFileToJsonData(processedData) {
   fs.writeFile(
     path.join(__dirname, dataProcessedPath, 'playersNationalDistribution.json'),
     JSON.stringify(processedData, null, '\t'),
-    err => {
+    (err) => {
       if (err) {
         console.log(err)
       }
@@ -78,7 +78,7 @@ fs.readdir(path.join(__dirname, dataSourceDirPath), (err, files) => {
     console.log(err)
   } else {
     filesTotalCount = files.length
-    files.forEach(file => {
+    files.forEach((file) => {
       filePath = path.join(__dirname, dataSourceDirPath, file)
       fs.readFile(filePath, 'utf-8', readFileCallback)
     })

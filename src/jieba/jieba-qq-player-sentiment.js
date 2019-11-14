@@ -7,7 +7,7 @@ const dataSourceDirPath = '../../data/qq-rock-music/top50-player-lyrics/'
 
 var sentiment = new Sentiment()
 var cnLanguage = {
-  labels: cnLabels
+  labels: cnLabels,
 }
 
 sentiment.registerLanguage('cn', cnLanguage)
@@ -16,14 +16,13 @@ sentiment.registerLanguage('cn', cnLanguage)
 function sentimentAnalysisFunc(file, sentence) {
   let countScore = 0
   console.log('=============')
-  console.log(file)
   let cutResult = nodejieba.cutAll(sentence)
-  cutResult.forEach(item => {
+  cutResult.forEach((item) => {
     var analyzeResult = sentiment.analyze(item, { language: 'cn' })
     // console.log(analyzeResult.score, analyzeResult.words)
     countScore += analyzeResult.score
   })
-  console.log(countScore)
+  console.log(file.split('.')[0] + ': ', countScore + '分')
   console.log('=============')
 }
 
@@ -32,7 +31,7 @@ fs.readdir(path.join(__dirname, dataSourceDirPath), (err, files) => {
     console.log(err)
   } else {
     filesTotalCount = files.length
-    files.forEach(file => {
+    files.forEach((file) => {
       filePath = path.join(__dirname, dataSourceDirPath, file)
       fs.readFile(filePath, 'utf-8', (err, data) => {
         if (err) {
